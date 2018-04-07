@@ -10,13 +10,15 @@ namespace CrimeDetectionClass.Controllers
     public class WomenController : Controller
     {
         [HttpGet]
+        [Authorize]
         public ActionResult Index()
         {
-
+            ViewBag.Status = "Nil";
             return View();
         }
 
-               [HttpPost]
+        [HttpPost]
+        [Authorize]
         public ActionResult Index(FormCollection frmCollection)
         {
             string Crime = frmCollection["Crime"];
@@ -28,11 +30,12 @@ namespace CrimeDetectionClass.Controllers
             objCrimeModel.Criminal = frmCollection["CriminalName"];
             objCrimeModel.Location = frmCollection["Location"];
             CrimeDataLayer objDatalayer = new CrimeDataLayer();
-            bool Response = objDatalayer.SaveCrime(objCrimeModel,1);
-            ViewBag.Message = "ok";
+            bool Response = objDatalayer.SaveCrime(objCrimeModel, 1);
+            ViewBag.Status = "success";
+            ViewBag.Message = "Your crime details has been successfully sent to the department";
 
             return View();
-    
+
         }
     }
 }

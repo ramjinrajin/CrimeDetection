@@ -9,7 +9,8 @@ namespace CrimeDetectionClass.Controllers
 {
     public class DashboardController : Controller
     {
-        // GET: Dashboard
+        [Authorize]
+        [IsUserPolice]
         public ActionResult Index()
         {
             CrimeDataLayer obj = new CrimeDataLayer();

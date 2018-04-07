@@ -7,7 +7,7 @@
  <div class="container body-content" style="height:5%">
      </div>
 @ViewBag.Result
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
         <fieldset>
             <!-- Form Name -->
             <legend style="text-align:center">Registration Form</legend>
@@ -35,11 +35,19 @@
 
                 </div>
             </div>
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Cnfpassword">Password</label>
+                <div class="col-md-4">
+                    <input id="Cnfpassword" name="Cnfpassword" type="password" placeholder="confirm the password" class="form-control input-md" required="">
+
+                </div>
+            </div>
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="contact">Contact no.</label>
                 <div class="col-md-4">
-                    <input id="contact" name="contact" type="text" placeholder="Enter your contact no." class="form-control input-md" required="">
+                    <input id="contact" name="contact" type="number" placeholder="Enter your contact no." class="form-control input-md" required="">
 
                 </div>
             </div>
@@ -96,7 +104,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="signup"></label>
                 <div class="col-md-4">
-                    <button id="signup" name="signup" class="btn btn-success">Sign Up</button>
+                    <input type="submit" id="signup" name="signup" value="Signup" class="btn btn-success" />
                 </div>
             </div>
         </fieldset>

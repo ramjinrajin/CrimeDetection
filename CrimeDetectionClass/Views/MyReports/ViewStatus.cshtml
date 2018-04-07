@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "ViewStatus";
+}
+
+
+<legend style="text-align:center">View Status</legend>
+
+<div class="col-md-12">
+    <div class="row clearfix">
+        <div class="col-md-8 column col-md-offset-2">
+     
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            This module is accessible only by registered user
+                            <small class="pull-right">Time: @DateTime.Now.TimeOfDay</small>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="col-md-12 column">
+                        <div class="list-group">
+
+                            <div class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    Case No :@Model.CrimeId
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Access website and use site API">
+                                        <i class="fa fa-question-circle"></i>
+                                    </a>
+                                </h4>
+                                <p class="list-group-item-text">
+                                    <span class="label @Model.StatusCode">@Model.Status</span>
+                                </p>
+                            </div>
+
+                            <div class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    Description
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Access site using SSH terminal">
+                                        <i class="fa fa-question-circle"></i>
+                                    </a>
+                                </h4>
+                                <p class="list-group-item-text">
+
+                                    @Model.Description
+                                </p>
+                            </div>
+
+
+                            @*<div class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    Change status
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Access database server and execute queries">
+                                        <i class="fa fa-question-circle"></i>
+                                    </a>
+                                </h4>
+                                <p class="list-group-item-text">
+                                    <select id="myList" name="Status" class="form-control">
+                                        <option value="Pending">Pending</option>
+                                        <option value="investigation">investigation</option>
+                                        <option value="Decline">Decline</option>
+                                        <option value="Completed">Completed</option>
+                                    </select>
+                                </p>
+
+                            </div>*@
+                        
+                            @foreach (var comment in Model.Comments)
+                            {
+                                <div class="list-group-item">
+                                    <h4 class="list-group-item-heading">
+                                        Comments
+                                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Access site using SSH terminal">
+                                            <i class="fa fa-question-circle"></i>
+                                        </a>
+                                    </h4>
+                                    <p class="list-group-item-text">
+
+                                        @comment
+                                    </p>
+                                </div>
+                            }
+
+                            @*<div class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    Comments
+                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Access database server and execute queries">
+                                        <i class="fa fa-question-circle"></i>
+                                    </a>
+                                </h4>
+                                <p class="list-group-item-text">
+                                    <textarea rows="6" name="Comment" class="form-control"></textarea>
+                                </p>
+                            </div>*@
+                   
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row clearfix">
+
+                </div>
+        
+        </div>
+    </div>
+</div>
+
+

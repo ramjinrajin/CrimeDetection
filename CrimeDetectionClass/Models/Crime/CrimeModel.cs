@@ -7,6 +7,7 @@ namespace CrimeDetectionClass.Models.Crime
 {
     public class CrimeModel
     {
+        public int CrimeId { get; set; }
         public string Crime { get; set; }
 
         public string Description { get; set; }
@@ -14,6 +15,11 @@ namespace CrimeDetectionClass.Models.Crime
         public string Criminal { get; set; }
 
         public string Location { get; set; }
+
+        public string Status { get; set; }
+        public string StatusCode { get; set; }
+
+        public List<string> Comments { get; set; }
     }
 
     public class Location

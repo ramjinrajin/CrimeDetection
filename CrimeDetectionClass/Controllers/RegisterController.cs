@@ -27,7 +27,22 @@ namespace CrimeDetectionClass.Controllers
             };
 
             UserDataLayer objData = new UserDataLayer();
-            ViewBag.Result = objData.UserRegistration(objUserModel);
+
+            try
+            {
+                ViewBag.Status = "success";
+                ViewBag.Message = objData.UserRegistration(objUserModel);
+                ViewBag.Message = "You are successfully registered to crime detection";
+            }
+            catch (Exception)
+            {
+
+                ViewBag.Status = "error";
+            }
+     
+
+           
+            
             return View();
         }
     }
