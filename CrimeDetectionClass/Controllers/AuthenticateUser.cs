@@ -9,10 +9,10 @@ namespace CrimeDetectionClass.Controllers
 {
     public class IsUserPoliceAttribute : ActionFilterAttribute
     {
-        string UserName = System.Web.HttpContext.Current.User.Identity.Name;
+        
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-
+            string UserName = System.Web.HttpContext.Current.User.Identity.Name;
             UserDataLayer objUserDataLayer = new UserDataLayer();
             bool IsPolice = objUserDataLayer.GetIsPoliceStatus(UserName);
 

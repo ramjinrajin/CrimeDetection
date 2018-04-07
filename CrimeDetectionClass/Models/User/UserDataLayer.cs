@@ -104,7 +104,7 @@ namespace CrimeDetectionClass.Models.User
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Select TOP 1 [UserId] From CrimeUsers where EmailId=@EmailId AND IsPolice=1", con);
+                    SqlCommand cmd = new SqlCommand("Select TOP 1 [UserId] From CrimeUsers where EmailId=@EmailId", con);
                     cmd.Parameters.AddWithValue("@EmailId", Email);
                     SqlDataReader rdr = cmd.ExecuteReader();
                    if(rdr.HasRows)

@@ -52,9 +52,10 @@ namespace CrimeDetectionClass.Controllers
 
         public ActionResult Logout()
         {
-            Session["IsPolice"] = false;
-            Session.Clear();
             FormsAuthentication.SignOut();
+            Session["IsPolice"] = false;
+            Session.Abandon();
+            Session.Clear();
             return RedirectToAction("Index", "Login");
         }
     }
