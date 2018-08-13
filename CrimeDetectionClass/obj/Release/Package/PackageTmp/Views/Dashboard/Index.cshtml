@@ -1,0 +1,206 @@
+﻿@model CrimeDetectionClass.Models.Crime.Location
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+
+
+
+
+ 
+
+
+
+    <!------ Include the above in your HEAD tag ---------->
+    <img style="display:none" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAA1CAYAAAAasVavAAACQklEQVR4nO2aT2sTQRjGZ/9E6x6UUFMtraAIXjyJn8IvIEgP9uTFj+DZq34Fe9a7X8LaKi2CGGsb0yiJEZWmSZrdcd46kz5b2uJlMoc8P3iTyWZhnve3O7sJbKT+EdUbrXtK6Re60DU1JURx1Davyzevzb82H3Uq2+QLrYuV+drs5WzmfNiEE6TXH9Ra7R8rZjinxI3dHimtpkqEcNiv6VvZE+JIxnRDGUBJBlGUUYIyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAxjKiKNIhg4QC+07HW7X++PPXn1vZhRmvT/6laaKS+P9OyDwv1CjPvWXp7fe19D3O5gZb2437+eLC0zj5fd3b7OY4JEl8Y+FKLasYKWcxPBip5rf2fqGLuq80Ra6/7HxtPhmnsyWHKrXl9cxYXd9cqs5Wny1enTtViIjY/d7pdTvdx3fv3H7lMY4skZGtwslwQhJ1JMOXlHj9/Yeli9VLz08SckzESwnpIYOG99zOcbjtuIzUY1VMyQPqmRHy6HNjd880rx2D4YHearT2Vtc2l2Ufu2/FY57E9u0cKBTiu5zwkpD+YKilRMSbtY2HVsS5E8L6rInjJpYmpdlMmq9vN7ufdpqdt+82HqiyiIkGDWHEzYnL0t1rZe3KxcytY2Fiv3/Ovr/5Q4RgkzKW5nMVSIQLFQq8a7mxVuUrfZBAoTht/iB/Df4C4IS8WTNVMN8AAAAASUVORK5CYII=' />
+
+
+
+<div class="col-md-4 col-md-offset-3">
+
+</div>
+
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.js"></script>
+<style>
+    body {
+  font: 10px sans-serif;
+}
+
+    svg
+    {
+         padding-left: 11%;
+    }
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  margin-top: 55px;
+}
+
+/*.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: orangered ;
+}*/
+
+.y.axis path {
+  display: none;
+}
+
+.d3-tip strong {
+    color: #181F27 !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    line-height: 16px !important;
+    text-align: center !important;
+}
+
+.d3-tip {
+  	margin-top: 8px;
+    line-height: 1;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    padding:   15px;
+    background: transparent;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAA1CAYAAAAasVavAAACQklEQVR4nO2aT2sTQRjGZ/9E6x6UUFMtraAIXjyJn8IvIEgP9uTFj+DZq34Fe9a7X8LaKi2CGGsb0yiJEZWmSZrdcd46kz5b2uJlMoc8P3iTyWZhnve3O7sJbKT+EdUbrXtK6Re60DU1JURx1Davyzevzb82H3Uq2+QLrYuV+drs5WzmfNiEE6TXH9Ra7R8rZjinxI3dHimtpkqEcNiv6VvZE+JIxnRDGUBJBlGUUYIyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAKAOgDIAyAMoAxjKiKNIhg4QC+07HW7X++PPXn1vZhRmvT/6laaKS+P9OyDwv1CjPvWXp7fe19D3O5gZb2437+eLC0zj5fd3b7OY4JEl8Y+FKLasYKWcxPBip5rf2fqGLuq80Ra6/7HxtPhmnsyWHKrXl9cxYXd9cqs5Wny1enTtViIjY/d7pdTvdx3fv3H7lMY4skZGtwslwQhJ1JMOXlHj9/Yeli9VLz08SckzESwnpIYOG99zOcbjtuIzUY1VMyQPqmRHy6HNjd880rx2D4YHearT2Vtc2l2Ufu2/FY57E9u0cKBTiu5zwkpD+YKilRMSbtY2HVsS5E8L6rInjJpYmpdlMmq9vN7ufdpqdt+82HqiyiIkGDWHEzYnL0t1rZe3KxcytY2Fiv3/Ovr/5Q4RgkzKW5nMVSIQLFQq8a7mxVuUrfZBAoTht/iB/Df4C4IS8WTNVMN8AAAAASUVORK5CYII=);
+    width:67px;
+    height:53px;
+    background-repeat: no-repeat;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display:none;
+  height:0 !important;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(255, 255, 255, 1);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;  
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+</style>
+
+<script>
+    $(document).ready(function () {
+
+        var margin = { top: 40, right: 40, bottom: 40, left: 40 },
+          width = 960 - margin.left - margin.right,
+          height = 500 - margin.top - margin.bottom;
+
+        //var currencyFormat = d3.format("$.2F");
+        var currencyFormat = function (d) { return "#" + d.toFixed(2); };
+
+        var x = d3.scale.ordinal()
+            .rangeRoundBands([0, width], 0.7);
+
+        var y = d3.scale.linear()
+          .range([height, 0]);
+
+        var xAxis = d3.svg.axis()
+          .scale(x)
+          .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+          .scale(y)
+          .orient("left")
+          .tickFormat(currencyFormat);
+
+        var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function (d) {
+            return "<strong style='font-family:Roboto; font-size:12px; color: #181F27;'>#" + (d.expense).toFixed(2) + "</strong>";
+        })
+
+        var svg = d3.select("body").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        svg.call(tip);
+
+        data = [
+            { category: 'Trivandrum', expense: '@Model.Trivandrum' },
+            { category: 'Kollam', expense: '@Model.Kollam' },
+            { category: 'Alappuzha', expense: '@Model.Alappuzha' },
+            { category: 'Thrissur', expense: '@Model.Thrissur' }];
+
+        x.domain(data.map(function (d) { return d.category; }));
+        y.domain([0, d3.max(data, function (d) { return d.expense; })]);
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        /*svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end");*/
+
+        svg.selectAll(".bar")
+        .data(data)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function (d) { return x(d.category); })
+        .attr("width", x.rangeBand())
+        .attr("y", function (d) { return y(d.expense); })
+        .attr("height", function (d) { return height - y(d.expense); })
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide);
+
+        function type(d) {
+            d.expense = +d.expense;
+            return d;
+        }
+
+        svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(customXAxis);
+
+        svg.append("g")
+        .call(customYAxis);
+
+        function customXAxis(g) {
+            g.call(xAxis);
+            g.select(".domain").remove();
+        }
+
+        function customYAxis(g) {
+            g.call(yAxis);
+            g.select(".domain").remove();
+            g.selectAll(".tick line").attr("stroke", "#777").attr("stroke-dasharray", "2,2");
+            g.selectAll(".tick:not(:first-of-type) line").attr("stroke", "#777").attr("stroke-dasharray", "2,2");
+            g.selectAll(".tick text").attr("x", 4).attr("dy", -4);
+        }
+    });
+
+</script>

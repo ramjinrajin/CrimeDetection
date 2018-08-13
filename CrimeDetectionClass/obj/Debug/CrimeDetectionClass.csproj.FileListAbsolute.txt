@@ -106,3 +106,21 @@ C:\Users\RamjinM\Desktop\Crime\CrimeDetection\CrimeDetectionClass\bin\System.Web
 C:\Users\RamjinM\Desktop\Crime\CrimeDetection\CrimeDetectionClass\obj\Debug\CrimeDetectionClass.csprojResolveAssemblyReference.cache
 C:\Users\RamjinM\Desktop\Crime\CrimeDetection\CrimeDetectionClass\obj\Debug\CrimeDetectionClass.dll
 C:\Users\RamjinM\Desktop\Crime\CrimeDetection\CrimeDetectionClass\obj\Debug\CrimeDetectionClass.pdb
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\CrimeDetectionClass.dll.config
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\CrimeDetectionClass.dll
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\CrimeDetectionClass.pdb
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.Helpers.dll
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.Mvc.dll
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.Razor.dll
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.WebPages.Deployment.dll
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.WebPages.dll
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.WebPages.Razor.dll
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.Helpers.xml
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.Mvc.xml
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.Razor.xml
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.WebPages.xml
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.WebPages.Deployment.xml
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\bin\System.Web.WebPages.Razor.xml
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\obj\Debug\CrimeDetectionClass.csprojResolveAssemblyReference.cache
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\obj\Debug\CrimeDetectionClass.dll
+F:\Projects\Inzenjer\3.Crime Detection\CrimeDetection\CrimeDetectionClass\obj\Debug\CrimeDetectionClass.pdb

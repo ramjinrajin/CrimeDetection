@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CrimeModelStoreContainer" CdmEntityContainer="CrimeEntities">
+    <EntitySetMapping Name="CrimeComments">
+      <EntityTypeMapping TypeName="CrimeModel.CrimeComment">
+        <MappingFragment StoreEntitySet="CrimeComments">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="CrimeId" ColumnName="CrimeId" />
+          <ScalarProperty Name="CommentDesc" ColumnName="CommentDesc" />
+        </MappingFragment>
+        <MappingFragment StoreEntitySet="tblCrime">
+          <ScalarProperty Name="CrimeId" ColumnName="CrimeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrimeUsers">
+      <EntityTypeMapping TypeName="CrimeModel.CrimeUser">
+        <MappingFragment StoreEntitySet="CrimeUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="IsPolice" ColumnName="IsPolice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCrimes">
+      <EntityTypeMapping TypeName="CrimeModel.tblCrime">
+        <MappingFragment StoreEntitySet="tblCrime">
+          <ScalarProperty Name="CrimeId" ColumnName="CrimeId" />
+          <ScalarProperty Name="Crime" ColumnName="Crime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Criminal" ColumnName="Criminal" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="IsWomensCrime" ColumnName="IsWomensCrime" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

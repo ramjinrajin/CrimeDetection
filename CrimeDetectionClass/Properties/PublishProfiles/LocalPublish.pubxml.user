@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/Credentials.txt">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="App_Data/Crime.mdf">
+      <publishTime>04/26/2018 00:31:35</publishTime>
+    </File>
+    <File Include="App_Data/Crime_log.ldf">
+      <publishTime>04/26/2018 00:31:35</publishTime>
+    </File>
+    <File Include="App_Data/DbScript.sql">
+      <publishTime>04/08/2018 01:07:02</publishTime>
+    </File>
+    <File Include="bin/CrimeDetectionClass.dll">
+      <publishTime>05/15/2018 22:56:25</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/css/bootstrap-theme.css">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/css/bootstrap-theme.css.map">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/css/bootstrap-theme.min.css">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/css/bootstrap.css">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/css/bootstrap.css.map">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/css/bootstrap.min.css">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/js/bootstrap.js">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/js/bootstrap.min.js">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/js/npm.js">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="dist/js/sweetalert.min.js">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/07/2018 19:54:15</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.js">
+      <publishTime>04/07/2018 19:54:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.min.js">
+      <publishTime>04/07/2018 19:54:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.min.map">
+      <publishTime>04/07/2018 19:54:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.js">
+      <publishTime>04/07/2018 19:54:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.min.js">
+      <publishTime>04/07/2018 19:54:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.min.map">
+      <publishTime>04/07/2018 19:54:15</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Views/CaseFiles/Index.cshtml">
+      <publishTime>04/07/2018 22:40:41</publishTime>
+    </File>
+    <File Include="Views/CaseFiles/UpdateStatus.cshtml">
+      <publishTime>04/07/2018 22:24:23</publishTime>
+    </File>
+    <File Include="Views/Dashboard/Index.cshtml">
+      <publishTime>04/07/2018 22:47:14</publishTime>
+    </File>
+    <File Include="Views/Error/Index.cshtml">
+      <publishTime>04/08/2018 00:28:55</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>04/07/2018 20:01:50</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>04/07/2018 23:42:43</publishTime>
+    </File>
+    <File Include="Views/MyReports/Index.cshtml">
+      <publishTime>04/08/2018 01:49:09</publishTime>
+    </File>
+    <File Include="Views/MyReports/ViewStatus.cshtml">
+      <publishTime>04/08/2018 01:51:51</publishTime>
+    </File>
+    <File Include="Views/Register/Index.cshtml">
+      <publishTime>04/08/2018 00:18:25</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>04/08/2018 01:33:33</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Views/Women/Index.cshtml">
+      <publishTime>04/08/2018 01:56:28</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>04/07/2018 19:38:28</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/15/2018 22:56:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

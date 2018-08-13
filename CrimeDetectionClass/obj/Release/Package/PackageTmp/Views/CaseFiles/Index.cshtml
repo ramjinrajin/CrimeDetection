@@ -1,0 +1,51 @@
+﻿@model List<CrimeDetectionClass.Models.Crime.CrimeModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<legend style="text-align:center">Case Files</legend>
+
+
+<div class="container">
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-hover" border="1">
+                <thead>
+                    <tr>
+                        <th>Crime Id:</th>
+                        <th>Crime</th>
+                        <th>Description</th>
+                        <th>Criminal</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                 @foreach (var CrimeObj in Model)
+                 {
+                    <tr>
+                        <td>@CrimeObj.CrimeId</td>
+                        <td>@CrimeObj.Crime</td>
+                        <td>@CrimeObj.Description</td>
+                        <td>@CrimeObj.Criminal</td>
+                        <td>@CrimeObj.Location</td>
+                        <td><span class="label @CrimeObj.StatusCode">@CrimeObj.Status</span></td>
+                        <td>
+                            <a href="~/CaseFiles/UpdateStatus?CrimeId=@CrimeObj.CrimeId" class="btn btn-primary  btn-xs">Update status</a>
+                          
+                        </td>
+
+                    </tr>
+                 }
+                    
+                  
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12 text-center">
+            <ul class="pagination pagination-lg pager" id="myPager"></ul>
+        </div>
+    </div>
+</div>

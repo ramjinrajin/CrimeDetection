@@ -1,0 +1,58 @@
+﻿<legend style="text-align:center">Womens Crime</legend>
+<div class="col-md-4 col-md-offset-4">
+ 
+
+    <form method="post">
+        <div class="form-group">
+            <label for="CrimeId">Womens Crime :</label>
+            <input type="text" name="Crime" id="CrimeId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="DescriptionId">Description :</label>
+            <input type="text" name="Description" id="DescriptionId" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="CriminalNameId">Criminal :</label>
+            <input type="text" name="CriminalName" id="CriminalNameId" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="CriminalNameId">Location :</label>
+            <select name="Location" class="form-control">
+                <option value="0">Trivandrum</option>
+                <option value="1">Kollam</option>
+                <option value="2">Alappuzha</option>
+                <option value="3">Thrissur</option>
+            </select>
+        </div>
+        <div class="form-group">
+
+            <input type="submit" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/dist/js/sweetalert.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var Alert = '@ViewBag.Message';
+
+        if (Alert == 'ok') {
+
+
+            swal({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
+                button: "ok",
+            });
+        }
+
+
+
+
+    });
+</script>

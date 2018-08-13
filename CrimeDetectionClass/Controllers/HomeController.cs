@@ -16,7 +16,7 @@ namespace CrimeDetectionClass.Controllers
         public ActionResult Index()
         {
             ViewBag.Status = "Nil";
-            return View();
+            return View("HomeLand");
         }
 
         [HttpPost]

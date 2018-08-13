@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CrimeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CrimeComments">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrimeId" Type="int" />
+          <Property Name="CommentDesc" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CrimeUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="100" />
+          <Property Name="District" Type="varchar" MaxLength="100" />
+          <Property Name="IsPolice" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblCrime">
+          <Key>
+            <PropertyRef Name="CrimeId" />
+          </Key>
+          <Property Name="CrimeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Crime" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Criminal" Type="varchar" MaxLength="100" />
+          <Property Name="Location" Type="varchar" MaxLength="100" />
+          <Property Name="IsWomensCrime" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="CrimeModelStoreContainer">
+          <EntitySet Name="CrimeComments" EntityType="Self.CrimeComments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CrimeUsers" EntityType="Self.CrimeUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCrime" EntityType="Self.tblCrime" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CrimeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CrimeComment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrimeId" Type="Int32" />
+          <Property Name="CommentDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CrimeUser">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="District" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsPolice" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblCrime">
+          <Key>
+            <PropertyRef Name="CrimeId" />
+          </Key>
+          <Property Name="CrimeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Crime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Criminal" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsWomensCrime" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CrimeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CrimeComments" EntityType="Self.CrimeComment" />
+          <EntitySet Name="CrimeUsers" EntityType="Self.CrimeUser" />
+          <EntitySet Name="tblCrimes" EntityType="Self.tblCrime" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CrimeModelStoreContainer" CdmEntityContainer="CrimeEntities">
+          <EntitySetMapping Name="CrimeComments">
+            <EntityTypeMapping TypeName="CrimeModel.CrimeComment">
+              <MappingFragment StoreEntitySet="CrimeComments">
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="CrimeId" ColumnName="CrimeId" />
+                <ScalarProperty Name="CommentDesc" ColumnName="CommentDesc" />
+              </MappingFragment>
+              <MappingFragment StoreEntitySet="tblCrime">
+                <ScalarProperty Name="CrimeId" ColumnName="CrimeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CrimeUsers">
+            <EntityTypeMapping TypeName="CrimeModel.CrimeUser">
+              <MappingFragment StoreEntitySet="CrimeUsers">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="IsPolice" ColumnName="IsPolice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCrimes">
+            <EntityTypeMapping TypeName="CrimeModel.tblCrime">
+              <MappingFragment StoreEntitySet="tblCrime">
+                <ScalarProperty Name="CrimeId" ColumnName="CrimeId" />
+                <ScalarProperty Name="Crime" ColumnName="Crime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Criminal" ColumnName="Criminal" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="IsWomensCrime" ColumnName="IsWomensCrime" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

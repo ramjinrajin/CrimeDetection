@@ -1,0 +1,92 @@
+
+ 
+
+CREATE TABLE [dbo].[CrimeUsers](
+	[UserId] [int] IDENTITY(1,1) Primary Key,
+	[EmailId] [varchar](100) NOT NULL,
+	[Password] [varchar](100) NOT NULL,
+	[ContactNo] [varchar](100) NULL,
+	[District] [varchar](100) NULL,
+	[IsPolice] [int] NOT NULL,
+)
+
+CREATE TABLE  [tblCrime](
+	[CrimeId] [int] IDENTITY(1,1) Primary Key,
+	[Crime] [varchar](100) NULL,
+	[Description] [nvarchar](max) NULL,
+	[Criminal] [varchar](100) NULL,
+	[Location] [varchar](100) NULL,
+	[IsWomensCrime] [int] NOT NULL,
+	[UserId] [int] Foreign Key References  CrimeUsers(UserId),
+	[Status] [varchar](100) NULL
+)  
+
+ 
+ CREATE TABLE [dbo].[CrimeComments](
+	[CommentId] [int] IDENTITY(1,1) Primary Key,
+	[CrimeId] [int] Foreign Key References  tblCrime(CrimeId),
+	[CommentDesc] [nvarchar](100) NULL,
+  
+) 
+
+
+CREATE Table tblAnalytics
+(
+Id int Identity(1,1) Primary Key,
+Score int Not null,
+[CrimeId] [int] Foreign Key References  tblCrime(CrimeId),
+[UserId] [int] Foreign Key References  CrimeUsers(UserId),
+IsDelete int, 
+CreateDate DateTime Default GetDate(),
+CreatedBy int,
+Modifiedby int,
+ModifiedDate Datetime 
+)
+
+ 
+CREATE Table tblCountry
+(
+Id int Identity(1,1) Primary Key,
+Name varchar(100)
+
+)
+
+CREATE Table tblState
+(
+Id int Identity(1,1) Primary Key,
+Name varchar(100),
+CountryId int Foreign Key References tblCountry(Id)
+)
+
+CREATE Table tblCity
+(
+Id int Identity(1,1) Primary Key,
+Name varchar(100),
+StateId int Foreign Key References tblState(Id)
+)
+
+
+CREATE Table CrimeReport 
+(
+Id int Identity(1,1)  Primary Key,
+ReportName varchar(100),
+Description varchar(max),
+[CrimeId] [int] Foreign Key References  tblCrime(CrimeId),
+CityId int Foreign Key References tblCity(Id),
+StateId int Foreign Key References tblState(Id),
+CountryId int Foreign Key References tblCountry(Id)
+
+
+
+
+)
+
+CREATE Table SysLog
+(
+Id int Identity(1,1) Primary Key,
+ExceptionType varchar(100),
+Internalexception varchar(100),
+DetailedException varchar(max),
+CreateDate DateTime Default GetDate(),
+CreatedBy int
+)
